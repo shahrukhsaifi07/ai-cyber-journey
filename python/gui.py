@@ -1,5 +1,6 @@
 import tkinter as tk
-import port_scanner
+from scanner import port_scanner
+
 def run_scanner():
     print("Running scanner")
     port_scanner()
