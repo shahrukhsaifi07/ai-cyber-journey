@@ -18,23 +18,7 @@ port_services = {
     443: "HTTPS",
     3306: "MySQL"
 }
-
-
-
-
-
  
- 
-
-# try:
-#     s.connect((target,port))
-#     banner=s.recv(1024)
-#     print("Banner :",banner.decode().strip())
-# except:
-#     print("No banner or connection failed")
-
-# s.close()
-
 def scan_port(port):
     with thread_limit:
         s=socket.socket()

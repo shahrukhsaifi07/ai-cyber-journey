@@ -1,3 +1,5 @@
-Login attempt: 1234 - Failed
-Login attempt: admin - Success
-Login attempt: test - Failed
+Login attempt: admin / 1234 - Failed
+Login attempt: admin / 12345 - Failed
+Login attempt: admin / password - Failed
+Login attempt: admin / admin123 - Success
+Login attempt: hacker / test - Failed
