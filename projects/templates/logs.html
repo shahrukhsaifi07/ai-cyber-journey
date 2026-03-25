@@ -1,0 +1,11 @@
+{% extends "base.html" %} {% block content %}
+<h2>Log Analysis</h2>
+
+<p>Failed Attempts: {{ result.failed }}</p>
+<p>Successful Logins: {{ result.success }}</p>
+
+<h3>User Attempts:</h3>
+
+{% for user, count in result.users.items() %}
+<p>{{ user }} -> {{ count }}</p>
+{% endfor %} {% endblock %}

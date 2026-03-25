@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block content %}
+<h2>Scan Results</h2>
+
+{% for port in results %}
+<p>{{port}}</p>
+{% endfor %}
+<a href="/">Back</a>
+{% endblock %}

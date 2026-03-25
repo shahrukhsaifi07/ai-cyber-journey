@@ -1,0 +1,28 @@
+body {
+  font-family: Arial;
+  background-color: #f4f6f8;
+}
+.navbar {
+  background: #222;
+  color: white;
+  padding: 15px;
+}
+.navbar a {
+  color: white;
+  margin-right: 15px;
+  text-decoration: none;
+}
+.container {
+  padding: 20px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  padding: 8px;
+  border: none;
+}
+
+input {
+  padding: 8px;
+}
