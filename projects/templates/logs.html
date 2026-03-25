@@ -8,4 +8,8 @@
 
 {% for user, count in result.users.items() %}
 <p>{{ user }} -> {{ count }}</p>
-{% endfor %} {% endblock %}
+{% endfor %}
+
+<h3>Ai Analysis</h3>
+<p>{{ai_result}}</p>
+{% endblock %}

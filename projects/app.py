@@ -2,6 +2,8 @@ from flask import Flask, request,render_template
 from scanner import port_scanner
 from log_analyzer import analyze_logs
 from brute_force import run_brute_force
+from ai_analyzer import analyze_with_ai
+
 
 app=Flask(__name__)
 
@@ -36,7 +38,8 @@ def scan():
 @app.route("/logs")
 def logs():
     result = analyze_logs()
-    return render_template("logs.html",result=result)
+    ai_result=analyze_with_ai(result)
+    return render_template("logs.html",result=result,ai_result=ai_result)
 
     # if isinstance(result, str):
     #     return result
