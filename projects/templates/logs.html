@@ -19,4 +19,9 @@
 <h3>Action</h3>
 <p>{{agent.action}}</p>
 
-{% endblock %}
+<h3>Tool Output</h3>
+{% if agent.tool_output %} {% for port in agent.tool_output %}
+<p>{{port}}</p>
+{% endfor %} {% else %}
+<p>No tool executed</p>
+{% endif %} {% endblock %}
