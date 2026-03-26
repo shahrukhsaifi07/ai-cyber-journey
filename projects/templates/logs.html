@@ -28,4 +28,9 @@
 <h3>Memory</h3>
 {% for m in agent.memory %}
 <p>{{m}}</p>
+{% endfor %}
+
+<h3>Blocked IPs</h3>
+{% for item in agent.tool_output %}
+<p>{{item}}</p>
 {% endfor %} {% endblock %}

@@ -1,6 +1,6 @@
 from ai_analyzer import analyze_with_ai
 from scanner import port_scanner
-
+from blocker import block_ip
 memory=[]
 
 def security_agent(log_data):
@@ -19,7 +19,7 @@ def security_agent(log_data):
 
     tool_output=[]
 
-    # target_user=list(log_data["users"].keys())[0] if log_data["users"] else "unknown"
+    target_user=list(log_data["users"].keys())[0] if log_data["users"] else "unknown"
     target_ip = max(log_data["ips"], key=log_data["ips"].get) if log_data["ips"] else None
     print("TARGET IP:", target_ip)
     # if "attack" in ai_result.lower(): or "failed login" in ai_result.lower()
@@ -28,15 +28,18 @@ def security_agent(log_data):
         decision=f"Brute Force Attack from {target_ip}"
 
         action="Running port scan on target ...."
-        # memory.append(target_user)
+        memory.append(target_user)
         # target = "127.0.0.1",
+       
         tool_output=port_scanner(target_ip)
+        block_result=block_ip(target_ip)
+        tool_output.append(block_result)
         ai_result +="\n\n[Sytem]:Brute force attack confirmed"
 
     return{
         "analysis" : ai_result,
         "decision" : decision,
         "action" : action,
-        # "memory":memory,
+        "memory":memory,
         "tool_output":tool_output
     }
