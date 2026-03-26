@@ -1,4 +1,5 @@
-Failed login user admin
-Failed login user admin
-Failed login user admin
-Failed login user admin
+[2026-03-25 10:00:01] FAILED user=admin ip=192.168.1.10
+[2026-03-25 10:00:02] FAILED user=admin ip=192.168.1.10
+[2026-03-25 10:00:03] FAILED user=admin ip=192.168.1.10
+[2026-03-25 10:00:04] FAILED user=admin ip=192.168.1.10
+[2026-03-25 10:00:05] SUCCESS user=guest ip=192.168.1.20

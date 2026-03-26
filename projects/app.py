@@ -38,7 +38,7 @@ def scan():
 @app.route("/logs")
 def logs():
     result = analyze_logs()
-    # print("Log Result :",result)
+    print("Log Result :",result)
     # ai_result=analyze_with_ai(result)
     agent_output=security_agent(result)
     return render_template("logs.html",result=result,agent=agent_output)

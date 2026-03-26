@@ -9,25 +9,37 @@ def analyze_logs():
     failed = 0
     success = 0
     user_attempts = {}
+    users={}
+    ips={}
 
     for log in logs:
-        if "Failed" in log:
+        log=log.strip()
+        # log_lower = log.lower()
+
+        if "FAILED" in log:
             failed += 1
 
-            try:
-                user = log.split()[3]
-                user_attempts[user] = user_attempts.get(user, 0) + 1
-            except:
-                pass
+            # try:
+               
+            # except:
+            #     pass
 
-        elif "Success" in log:
+        elif "SUCCESS" in log:
             success += 1
+        
+        if "user=" in log:
+             user = log.split("user=")[1].split()[0]
+             users[user] = users.get(user, 0) + 1
 
+        if "ip=" in log:
+            ip=log.split("ip=")[1]
+            ips[ip]=ips.get(ip,0)+1
 
     result={
         "failed":failed,
         "success":success,
-        "users":user_attempts
+        "users":users,
+        "ips":ips
     }
     return result
     # print("\n--- Log Summary ---")
