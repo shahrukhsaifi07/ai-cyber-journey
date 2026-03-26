@@ -19,7 +19,13 @@ def security_agent(log_data):
 
     detecion=detect_threat(log_data)
     response=decide_response(detecion)
-    decision="Normal Activity"
+    decision= analyze_with_ai(log_data)
+    results=[]
+    if decision =="block_ip":
+        results.append(block_ip(target_ip))
+    elif decision == "scan_ports":
+        results.extend(port_scanner(target_ip))
+
     action="No action needed"
 
     tool_output=[]

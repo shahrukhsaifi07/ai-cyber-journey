@@ -16,7 +16,12 @@ def analyze_with_ai(log_data):
     Success: {log_data['success']}
     IPs: {log_data['ips']}
 
-    Is this normal or suspicious? Explain briefly.
+    Decide action:
+    - block_ip
+    - scan_ports
+    - ignore
+
+    Return ONLY one action word.
     """
     # response=client.chat.completions.create(
     #     model="meta-llama/llama-3-8b-instruct",
@@ -42,4 +47,4 @@ def analyze_with_ai(log_data):
     except Exception as e:
         print("ERROR:",e)
         print("RESPONSE:",response.text)
-        return "AI analysis failed"
+        return "ignore"
