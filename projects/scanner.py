@@ -42,7 +42,7 @@ def port_scanner(target):
 
     threads = []
 
-    print("\nScanning...\n")
+    # print("\nScanning...\n")
 
     for port in ports:
         t = threading.Thread(target=scan_port, args=(port,))

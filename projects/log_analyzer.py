@@ -5,7 +5,7 @@ def analyze_logs():
     except:
         print("logs.txt not found!")
         return
-
+    # print(logs)
     failed = 0
     success = 0
     user_attempts = {}
@@ -15,7 +15,7 @@ def analyze_logs():
             failed += 1
 
             try:
-                user = log.split()[2]
+                user = log.split()[3]
                 user_attempts[user] = user_attempts.get(user, 0) + 1
             except:
                 pass

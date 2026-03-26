@@ -1,8 +1,8 @@
 from openai import OpenAI
 import requests
 
-Api_key=" "
-# client = OpenAI(api_key=" ")
+Api_key="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"
+# client = OpenAI(api_key="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")
 
 def analyze_with_ai(log_data):
     prompt = f"""

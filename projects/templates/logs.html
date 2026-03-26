@@ -24,4 +24,8 @@
 <p>{{port}}</p>
 {% endfor %} {% else %}
 <p>No tool executed</p>
-{% endif %} {% endblock %}
+{% endif %}
+<h3>Memory</h3>
+{% for m in agent.memory %}
+<p>{{m}}</p>
+{% endfor %} {% endblock %}
