@@ -33,4 +33,10 @@
 <h3>Blocked IPs</h3>
 {% for item in agent.tool_output %}
 <p>{{item}}</p>
-{% endfor %} {% endblock %}
+{% endfor %}
+<h3>Detection</h3>
+<p>{{ agent.detection }}</p>
+
+<h3>Response</h3>
+<p>{{ agent.response }}</p>
+{% endblock %}
